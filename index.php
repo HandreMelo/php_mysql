@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Formulário de usuário</title>
-        <script src="js/jquery-1.8.2.min.js" type="text/javascript" ></script>
+        <script src="js/jquery-3.4.1.min.js" type="text/javascript" ></script>
         <style>
                label{
                 display: block;
@@ -44,10 +44,10 @@
                 </tr>
                 <?php
 
-					include 'conexao.php'; 
-                $select = "SELECT * FROM USUARIO";
-                $result = mysql_query($select); //resultado do select
-                while ($row = mysql_fetch_array($result)) { 
+		include 'conexao.php'; 
+                $select = "SELECT * FROM usuario";
+                $result = $con->query($select); //resultado do select
+                while ($row = $result -> fetch_assoc()) { 
                     $id = $row['ID_USUARIO'];
                     $nome = $row['NOME'];
                     $email = $row['EMAIL'];
